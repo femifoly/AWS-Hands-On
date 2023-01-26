@@ -84,7 +84,9 @@ This will connect you to the EC2 instance.
 
 ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/puttyb.jpg)
 
+
 ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/puttyb1.jpg)
+
 
 ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/puttyb2.jpg)
 
