@@ -30,3 +30,16 @@ She also has a question about using a public range of IP addresses for the new V
 
 You currently have one VPC with the same CIDR of 10.0.0.0/16 with two instances — instance A and instance B — with the same configurations as the customer. When troubleshooting networking and AWS, you can apply a troubleshooting method where you start from the top and work your way down or start from the bottom and work your way up. You start troubleshooting from the bottom and work your way to the top in layers using an example such as the OSI model. At the very bottom of this architecture is the EC2 instance. Although the cloud architecture does not directly translate to the OSI model, the following is an example of how the OSI and cloud relate.
 ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/osi.jpg)
+
+* For task 1, I gain an understanding of the customer's environment and replicate their issue.
+* At the upper-right of these instructions, choose AWS. The AWS Management Console opens in a new tab.
+  Once you are in the AWS console, type and search for EC2 in the search bar on the top-left corner. Select EC2 from the list.
+* Please copy and paste the names and IP addresses of both instances for future reference in a text editor. 
+  Select the check box next to instance A. At the bottom of the page, choose the Networking tab, and note the Public and Private IPv4 addresses.
+![](
+Once you copy and paste the name and IP addresses, deselect the instance, and then select instance B and do the same.  
+![](
+** *Did you notice any differences?***
+### The Instance is a not does not have any Public IP assigned to it
+
+### Task 2: Use SSH to connect to an Amazon Linux EC2 instance
