@@ -47,7 +47,7 @@ Once you copy and paste the name and IP addresses, deselect the instance, and th
 ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/ec2b).jpg
 
 ** *Did you notice any differences?***
-### ***The instance A does not have any Public IP assigned to it***
+### ***It can be observered that instance A does not have any Public IP assigned to it***
 
 ### Task 2: Use SSH to connect to an Amazon Linux EC2 instance
 
