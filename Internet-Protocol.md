@@ -34,12 +34,55 @@ You currently have one VPC with the same CIDR of 10.0.0.0/16 with two instances 
 * For task 1, I gain an understanding of the customer's environment and replicate their issue.
 * At the upper-right of these instructions, choose AWS. The AWS Management Console opens in a new tab.
   Once you are in the AWS console, type and search for EC2 in the search bar on the top-left corner. Select EC2 from the list.
+  ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/ec2.jpg)
 * Please copy and paste the names and IP addresses of both instances for future reference in a text editor. 
   Select the check box next to instance A. At the bottom of the page, choose the Networking tab, and note the Public and Private IPv4 addresses.
-![](
+![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/ec2a.jpg)
 Once you copy and paste the name and IP addresses, deselect the instance, and then select instance B and do the same.  
-![](
+![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/ec2b).jpg
 ** *Did you notice any differences?***
-### The Instance is a not does not have any Public IP assigned to it
+### ***The instance A does not have any Public IP assigned to it***
 
 ### Task 2: Use SSH to connect to an Amazon Linux EC2 instance
+
+In this task, you will connect to first connect to instance A and then to instance B instance. Note any observations.
+You will use an SSH utility to perform all of these operations
+
+* Open putty.exe
+* Configure PuTTY timeout to keep the PuTTY session open for a longer period of time: 30
+  Select Connection
+  Set Seconds between keepalives to 30
+![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/putty.jpg)
+* Configure your PuTTY session:
+  Select Session
+  Host Name (or IP address): Paste the IPv4 address of instance A you made a note of earlier. Note: Should you use a Public or Private IP address to connect?
+![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/putty1.jpg)
+* Back in PuTTY, in the Connection list, expand  SSH
+  Select Auth (don't expand it)
+  Select Browse
+  Browse to and select the lab#.ppk file that you downloaded
+  Select Open to select it
+  Select Open again.
+  Select Yes, to trust and connect to the host.
+![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/putty2.jpg)
+* When prompted login as, enter: ec2-user
+This will connect you to the EC2 instance.
+## Repeat Task 2 for instance B
+![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/puttyb1.jpg)
+![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/puttyb2.jpg)
+
+```
+Question - Were you able to use the SSH to connect to both instances? Why or why not?
+
+Answer: If you were not able to connect to instance A, it was due to this instance being assigned only a private IP address.
+Private IP addresses cannot be accessed from outside the VPC. This is why you are only able to connect to instance B. 
+Instance B has a public IP address assigned to it allowing access from outside the VPC, which allows you to use the 
+SSH utility to connect to the instance.
+```
+## Task 3: Send the Response to the customer
+
+The customer asked for your insight regarding using a public CIDR for a new VPC that she would like to launch. Refer to module 4 and gather some evidence and summarize a short explanation of your findings to explain to the customer why or why not you recommend this approach.
+
+
+Recap
+In this lab you have investigated the customer's environment and applied troubleshooting techniques that allowed you to resolve the customers’ issue. Within the scenario, you discovered that the customer's EC2 instance (instance A) needed a public IP address to connect to the internet. This was tested by using an SSH utility to connect to the instance. Private IP addresses are used within the VPC and cannot establish a connection to the internet. As module 4 noted, you discovered that using a public range of IP addresses for a VPC can result in complications from having replies back from other unrelated resources.
