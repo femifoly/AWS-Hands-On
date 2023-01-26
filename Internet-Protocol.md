@@ -34,12 +34,18 @@ You currently have one VPC with the same CIDR of 10.0.0.0/16 with two instances 
 * For task 1, I gain an understanding of the customer's environment and replicate their issue.
 * At the upper-right of these instructions, choose AWS. The AWS Management Console opens in a new tab.
   Once you are in the AWS console, type and search for EC2 in the search bar on the top-left corner. Select EC2 from the list.
+  
   ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/ec2.jpg)
+  
 * Please copy and paste the names and IP addresses of both instances for future reference in a text editor. 
   Select the check box next to instance A. At the bottom of the page, choose the Networking tab, and note the Public and Private IPv4 addresses.
+  
 ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/ec2a.jpg)
+
 Once you copy and paste the name and IP addresses, deselect the instance, and then select instance B and do the same.  
+
 ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/ec2b).jpg
+
 ** *Did you notice any differences?***
 ### ***The instance A does not have any Public IP assigned to it***
 
@@ -52,11 +58,15 @@ You will use an SSH utility to perform all of these operations
 * Configure PuTTY timeout to keep the PuTTY session open for a longer period of time: 30
   Select Connection
   Set Seconds between keepalives to 30
+  
 ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/putty.jpg)
+
 * Configure your PuTTY session:
   Select Session
   Host Name (or IP address): Paste the IPv4 address of instance A you made a note of earlier. Note: Should you use a Public or Private IP address to connect?
+  
 ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/putty1.jpg)
+
 * Back in PuTTY, in the Connection list, expand  SSH
   Select Auth (don't expand it)
   Select Browse
@@ -64,11 +74,18 @@ You will use an SSH utility to perform all of these operations
   Select Open to select it
   Select Open again.
   Select Yes, to trust and connect to the host.
+  
 ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/putty2.jpg)
+
 * When prompted login as, enter: ec2-user
 This will connect you to the EC2 instance.
+
 ## Repeat Task 2 for instance B
+
+![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/puttyb.jpg)
+
 ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/puttyb1.jpg)
+
 ![](https://github.com/femifoly/AWS-Projects/blob/main/AWS%20Projects/IP/puttyb2.jpg)
 
 ```
@@ -77,6 +94,7 @@ Question - Were you able to use the SSH to connect to both instances? Why or why
 Answer: If you were not able to connect to instance A, it was due to this instance being assigned only a private IP address.
 Private IP addresses cannot be accessed from outside the VPC. This is why you are only able to connect to instance B. 
 Instance B has a public IP address assigned to it allowing access from outside the VPC, which allows you to use the 
+
 SSH utility to connect to the instance.
 ```
 ## Task 3: Send the Response to the customer
